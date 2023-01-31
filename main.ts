@@ -6,6 +6,20 @@ function updateScorces () {
     OLED.writeStringNewLine("Ties: " + ties)
     OLED.writeStringNewLine("Rounds: " + rounds)
 }
+input.onButtonPressed(Button.AB, function () {
+    rps = randint(1, 3)
+    if (rps == 1) {
+        basic.showLeds(`
+            . . . . .
+            . # # # .
+            . # # # .
+            . # # # .
+            . . . . .
+            `)
+    } else {
+    	
+    }
+})
 input.onGesture(Gesture.Shake, function () {
     reset()
 })
@@ -20,6 +34,7 @@ function reset () {
     OLED.clear()
     updateScorces()
 }
+let rps = 0
 let rounds = 0
 let ties = 0
 let p1 = 0
